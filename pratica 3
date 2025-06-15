@@ -1,0 +1,30 @@
+pratica 3 lab 3
+
+para installarlo usamos:
+
+sudo yum install sshd
+
+vemos la ip de nuestra maquina usando:
+
+ip a 
+o 
+ifconfig
+
+luego para acceder desde la terminal de windows usamos:
+
+ssh xaviel@-nuestra ip de la maquina-
+
+ahora vamos a generar la clave:
+
+ssh-keygen
+
+
+luego entramos en:
+
+cd .ssh
+ls
+
+ssh -i C:\Users\pc\.ssh\mi_llave_ssh xaviel@192.168.0.20
+
+
+ssh-keygen -t rsa -b 4096 -f "C:\Users\pc\.ssh\mi_llave_ssh"
