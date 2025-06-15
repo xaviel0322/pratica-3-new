@@ -1,0 +1,50 @@
+pratica 2 lab 3
+
+sudo nano /usr/local/bin/backup_home.sh
+
+
+scrpt 
+
+USER=$(whoami)
+DATE=$(date +"%d-%m-%y_%H:%M")
+tar -czvf /tmp/${USER}_backup_${DARE}.tar.gz /home/${USER}
+echo "Backup created at: /tmp/${USER}_backup_${DATE}.tar.gz"
+
+la damos permisos 
+
+sudo chmod +x /usr/local/bin/backup_home.sh
+
+luego lo ejecutamos 
+
+backup_home.sh
+
+para verificar 
+
+ls -l /tmp/*tar.gz
+
+ls -a
+
+
+parte 2
+
+sudo nano /usr/local/bin/save_ifconfig.sh
+
+ponemos el scrit
+
+read -p "File name: " FILENAME
+ifconfig > ~/Desktop/${FILENAME}.txt
+echo "File saved to: ~/Desktop/${FILENAME}.txt"
+
+le damos permisos
+
+sudo chmod +x /usr/local/bin/save_ifconfig.sh
+
+ahora lo ejecutamos 
+
+save_idconfig.sh
+
+nos pedira que pongamos el nombre ponemos uno
+
+para verlo ponemos 
+
+cd Desktop
