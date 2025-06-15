@@ -1,0 +1,60 @@
+pratica 1 lab 3
+
+1.	Reinicia el sistema y entra al menú de GRUB.
+
+o	En la pantalla de GRUB, selecciona el kernel actual, y presiona e para editar.
+
+2.	Busca la línea que empieza con linux16 o linux y al final agrega:
+
+rd.break
+
+3.	Presiona Ctrl + X o F10 para iniciar con ese parámetro.
+
+4.	Se abrirá una shell de emergencia. Monta el sistema con permisos de escritura:
+
+mount -o remount,rw /sysroot
+
+5.	Accede al sistema montado:
+
+chroot /sysroot
+
+6.	Cambia la contraseña del usuario root:
+
+passwd root
+
+7.	Reetiqueta SELinux para evitar errores:
+
+touch /.autorelabel
+
+8.	Salir y reiniciar el sistema:
+
+exit
+exit
+
+
+
+
+
+parte 2:
+
+
+Abrir el archivo de configuración de GRUB:
+
+
+sudo nano /etc/default/grub
+
+
+Buscar la línea que dice:
+
+
+GRUB_TIMEOUT=5
+
+Cambiarla a:
+
+
+GRUB_TIMEOUT=20
+
+Regenerar el archivo de configuración de GRUB:
+
+
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
